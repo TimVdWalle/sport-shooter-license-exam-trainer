@@ -44,8 +44,25 @@
 
     <!-- Content -->
     <div class="relative">
-        <h1 class="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">Good afternoon, {{ Auth::user()->name ?? '' }} 👋</h1>
-        <p class="dark:text-indigo-200">Here is what's happening with your projects today:</p>
+        @php
+            $hour = date('H');
+            if ($hour < 5) {
+                $greeting = 'Goedenacht';
+            } elseif ($hour < 12) {
+                $greeting = 'Goedemorgen';
+            } elseif ($hour < 17) {
+                $greeting = 'Goeie middag';
+            } elseif ($hour < 21) {
+                $greeting = 'Goedenavond';
+            } else {
+                $greeting = 'Goedenacht';
+            }
+        @endphp
+
+        <h1 class="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">{{ $greeting }}, {{ Auth::user()->name ?? '' }} 👋</h1>
+        <p class="dark:text-indigo-200">
+            Oefenen voor theoretisch examen sportschutterslicentie
+        </p>
     </div>
 
 </div>

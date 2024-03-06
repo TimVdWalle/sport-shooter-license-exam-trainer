@@ -23,7 +23,7 @@ use App\Http\Controllers\CampaignController;
 |
 */
 
-Route::redirect('/', 'login');
+Route::redirect('/', 'login')->name('login');
 
 Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
 

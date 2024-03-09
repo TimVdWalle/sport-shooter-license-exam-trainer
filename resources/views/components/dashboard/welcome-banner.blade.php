@@ -59,9 +59,9 @@
             }
         @endphp
 
-        <h1 class="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">{{ $greeting }}, {{ Auth::user()->name ?? '' }} 👋</h1>
+        <h1 class="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">{{ $greeting }} {{ Auth::user() ? ', ' . Auth::user()->name : '' }} 👋</h1>
         <p class="dark:text-indigo-200">
-            Oefenen voor theoretisch examen sportschutterslicentie
+            Welkom bij de oefenmodule ter voorbereiding van het <b>theoretisch examen sportschutterslicentie</b>
         </p>
     </div>
 
